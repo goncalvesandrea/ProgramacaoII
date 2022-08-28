@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Form</h1>
+
+    <h3>GET</h3>
+    <form action="http://localhost:3000/" method="GET">
+        <input type="submit" value="Enviar">
+    </form>
+
+    <h3>POST</h3>
+    <form action="http://localhost:3000/" method="POST">
+        <input type="submit" value="Enviar">
+    </form>
+
+    <h3>PUT</h3>
+    <form action="http://localhost:3000/" method="PUT">
+        <input type="submit" value="Enviar">
+    </form>
+
+    <h3>DELETE</h3>
+    <form action="http://localhost:3000/" method="delete">
+        <input type="submit" value="Enviar">
+    </form>
+
+
+    <hr>
+    <h1>FETCH</h1>
+
+    <button onclick="request('GET')">GET</button>
+    <br>
+    <button  onclick="request('POST')">POST</button>
+    <br>
+    <button  onclick="request('PUT')">PUT</button>
+    <br>
+    <button  onclick="request('DELETE')">DELETE</button>
+    <br>
+    <button  onclick="request('PATCH')">PATCH</button>
+    <br>
+    <div id="saida-servidor">
+
+    </div>
+
+    <script>
+
+        function request(verbo) {
+            fetch('http://localhost:3000/', {
+                method: verbo
+            })
+            .then((resposta) => {
+                resposta.text()
+                    .then((texto) => {
+                        document.getElementById('saida-servidor').innerText = texto
+                    })
+            })
+        }
+        
+    </script>
+</body>
+</html>
