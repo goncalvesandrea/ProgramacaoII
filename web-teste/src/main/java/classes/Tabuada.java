@@ -1,7 +1,7 @@
 package classes;
 
 public class Tabuada {
-	private Integer numeroMaximoTabuada = 10;
+	public Integer numeroMaximoTabuada = 10;
 	
 	public String calcular(Integer numero) {
 		StringBuilder sb = new StringBuilder();
